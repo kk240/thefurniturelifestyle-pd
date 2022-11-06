@@ -102,11 +102,11 @@
                                         </ul>
                                     </li> -->
                                     
-                                    <!-- <li ><a href="{{route('login')}}">Login</a>
+                                   {{-- <li ><a href="{{route('login')}}">Login</a>
                                     </li>
                                     <li ><a href="{{route('register')}}">Register</a>
-                                    </li> -->
-                                    
+                                    </li> 
+                                    --}}
                                     <li><a href="{{route('contact')}}">Contact</a></li>
                                     
                                  </ul>
