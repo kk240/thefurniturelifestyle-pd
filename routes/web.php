@@ -33,6 +33,10 @@ Route::get('/contact-us',  function () {
     return view('contact');
 })->name('contact');
 
+Route::get('/blog', function(){
+    return view('contact');
+})
+
 Route::get('/about-us',  function () {
     return view('aboutus');
 })->name('about-us');
