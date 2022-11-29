@@ -91,7 +91,8 @@
                                 	<h2>Send Us Message</h2>
                                     <div class="widget-content">
                                         <div class="newsletter-form">
-                                            <form method="post" action="#">
+                                            <form method="post" action="{{ route('contact-us') }}">
+                                                @csrf
                                                 <div class="form-group">
                                                     <input type="text" name="name" value="" placeholder="Name" required>
                                                 </div>
