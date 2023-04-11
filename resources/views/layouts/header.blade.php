@@ -48,8 +48,10 @@
             	<div class="outer-container clearfix">
                     <!--Logo Box-->
                     <div class="logo-box">
-                        <div class="logo"><a href="{{route('home')}}"><!--<img src="{{ asset(env('ADD_PUBLIC').'/images/logo.png')}}" alt=""> -->
-                            <h1 class="company_name">The FurnitureLifestyle</h1>
+                        <div class="logo">
+                            <a href="{{route('home')}}">
+                                <!--<img src="{{ asset(env('ADD_PUBLIC').'/images/logo.png')}}" alt=""> -->
+                            <h1 class="company_name text-sm text-lg">The FurnitureLifestyle</h1>
                         </a></div>
                     </div>
                     

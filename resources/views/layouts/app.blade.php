@@ -11,7 +11,7 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <title>{{ config('app.name', 'Laravel') }}</title>
 <script src="{{ asset(env('ADD_PUBLIC').'/js/app.js') }}" ></script>
-<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com"> 
 <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 <link href="{{ asset(env('ADD_PUBLIC').'/css/bootstrap.css') }}" rel="stylesheet">
 <link href="{{ asset(env('ADD_PUBLIC').'/css/revolution-slider.css') }}" rel="stylesheet">
@@ -28,7 +28,6 @@
 .company_name{
     display: inline;
     font-size: 25px;
-    margin-left: -25px;
 }
 }
 </style>

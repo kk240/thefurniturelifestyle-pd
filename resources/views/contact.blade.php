@@ -76,7 +76,7 @@
                         <ul>
                             <li><div class="icon-box"><span class="flaticon-international-delivery"></span></div><h4>Address :</h4><div class="text">21/17, Level 4 Steel Rock St, Melbourne <br>Victoria 3000, Australia.</div></li>
                             <li><div class="icon-box"><span class="flaticon-envelope"></span></div><h4>Mail to Fernando :</h4><div class="text">thefurniturelifestyle@gmail.com</div></li>
-                            <li><div class="icon-box"><span class="flaticon-phone-call"></span></div><h4>Call Him:</h4><div class="text"> +1 (44) 123-45-67, +1(44) 456-78-90</div></li>
+                            <li><div class="icon-box"><span class="flaticon-phone-call"></span></div><h4>Call Him:</h4><div class="text"> +91 7875303545</div></li>
                         </ul>
                     </div>
                 </div>
