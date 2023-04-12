@@ -725,11 +725,17 @@
                         <div class="sub-title">Request for</div>
                         <h2>Free Quotation</h2>
                     </div>
+                    @if (Session::has('message_sent'))
+                    <div class="alert alert-success" role="alert">
+                    {{Session::get('message_sent')}}
+                    </div>
+                    @endif
                     
                     <!--form-box-->
                     <div class="form-box default-form wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div class="contact-form default-form">
-                            <form method="post" action="#">
+                            <form method="post" action="{{route('contact.send')}}">
+                                @csrf
                                 <div class="row clearfix">
                                 
                                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
@@ -741,7 +747,7 @@
                                     </div>
                                 
                                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                                        <input type="text" name="username" value="" placeholder="Your Name *" required>
+                                        <input type="text" name="name" value="" placeholder="Your Name *" required>
                                     </div>
         
                                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
@@ -749,7 +755,7 @@
                                     </div>
                                     
                                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                                        <input type="text" name="number" value="" placeholder="Phone Number">
+                                        <input type="text" name="phone" value="" placeholder="Phone Number">
                                     </div>
                                     
                                     <div class="form-group col-md-12 col-sm-12 col-xs-12">

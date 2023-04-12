@@ -29,10 +29,16 @@
                 <!--Form Column -->
             	<div class="column form-column col-lg-6 col-md-12 col-sm-12 col-xs-12">
                 	<div class="sec-title medium"><h2>Send Message Us</h2></div>
+                    @if (Session::has('message_sent'))
+                    <div class="alert alert-success" role="alert">
+                    {{Session::get('message_sent')}}
+                    </div>
+                    @endif
                 	<!--form-box-->
                     <div class="form-box default-form">
                         <div class="contact-form default-form">
-                            <form method="post" action="http://world5.commonsupport.com/html2/decorators/sendemail.php" id="contact-form">
+                            <form method="post" action="{{route('contact.send')}}" id="contact-form">
+                                @csrf
                                 <div class="row clearfix">
                                 
                                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
@@ -45,7 +51,7 @@
                                     </div>
                                 
                                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                                        <input type="text" name="username" value="" placeholder="Your Name *" required>
+                                        <input type="text" name="name" value="" placeholder="Your Name *" required>
                                     </div>
         
                                     <div class="form-group col-md-6 col-sm-6 col-xs-12">

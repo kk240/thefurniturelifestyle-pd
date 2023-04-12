@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +35,8 @@ Route::get('/contact-us',  function () {
 })->name('contact');
 
 Route::post('/contact-us',  'HomeController@contactUs')->name('contact-us');
+
+Route::post('/send-message', 'HomeController@sendEmail')->name('contact.send');
 
 Route::get('/about-us',  function () {
     return view('aboutus');

@@ -50,8 +50,8 @@
                     <div class="logo-box">
                         <div class="logo">
                             <a href="{{route('home')}}">
-                                <!--<img src="{{ asset(env('ADD_PUBLIC').'/images/logo.png')}}" alt=""> -->
-                            <h1 class="company_name text-sm text-lg">The FurnitureLifestyle</h1>
+                               <img src="{{ asset(env('ADD_PUBLIC').'/images/logo.png')}}" width="200" height="50" alt=""> 
+                            {{-- <h1 class="company_name text-sm text-lg">The FurnitureLifestyle</h1> --}}
                         </a></div>
                     </div>
                     
