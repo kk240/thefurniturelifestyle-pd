@@ -52,6 +52,7 @@
                             <a href="{{route('home')}}">
                                <img src="{{ asset(env('ADD_PUBLIC').'/images/logo.png')}}" width="200" height="50" alt=""> 
                             {{-- <h1 class="company_name text-sm text-lg">The FurnitureLifestyle</h1> --}}
+                           
                         </a></div>
                     </div>
                     
@@ -103,14 +104,50 @@
                                             <li><a href="register.html">Login / Register</a></li>
                                         </ul>
                                     </li> -->
-                                    
-                                   {{-- <li ><a href="{{route('login')}}">Login</a>
-                                    </li>
-                                    <li ><a href="{{route('register')}}">Register</a>
-                                    </li> 
-                                    --}}
+
                                     <li><a href="{{route('contact')}}">Contact</a></li>
                                     
+                                    @auth
+                                    @if( Auth::user()->role->id == 1)
+                                    <a href="{{ route('admin.dashboard') }}">Dashboard</a>
+                                    @elseif(Auth::user()->role->id == 2)
+                                    <a href="{{ route('user.dashboard') }}">Dashboard</a>
+                                    @else {{null}};
+                                    @endif 
+                                    @endauth
+
+                                    @guest   
+                                    <li ><a href="{{route('login')}}">Login</a></li>
+                                
+                                    @if (Route::has('register'))
+                                    <li ><a href="{{route('register')}}">Register</a></li> 
+                                    @endif  
+                                    @else
+                                    <li class="dropdown"><a href="#">{{ Auth::user()->name }}</a>
+                                        <ul>
+                                            <li><a href="#">profile</a></li>
+                                        <li>
+                                            
+                                       
+
+                                                <a  href="{{ route('logout') }}"
+                                                   onclick="event.preventDefault();
+                                                                 document.getElementById('logout-form').submit();">
+                                                    {{ __('Logout') }}
+                                                </a>
+            
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                    @csrf
+                                                    </form>
+                                                     </li>  
+
+                                            
+                                                </ul>
+                                                </li>
+                                
+                               
+                                             @endguest    
+
                                  </ul>
                             </div>
                         </nav><!-- Main Menu End-->
