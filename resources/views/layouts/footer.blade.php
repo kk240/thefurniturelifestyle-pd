@@ -89,9 +89,14 @@
                         	<div class="footer-column col-md-6 col-sm-6 col-xs-12">
                             	<div class="footer-widget contact-widget">
                                 	<h2>Send Us Message</h2>
+                                    @if (Session::has('sent'))
+                                    <div class="alert alert-success" role="alert">
+                                    {{Session::get('sent')}}
+                                    </div>
+                                    @endif
                                     <div class="widget-content">
                                         <div class="newsletter-form">
-                                            <form method="post" action="{{ route('contact-us') }}">
+                                            <form method="post" action="{{ route('contact-us') }}" id="form-section">
                                                 @csrf
                                                 <div class="form-group">
                                                     <input type="text" name="name" value="" placeholder="Name" required>
@@ -100,7 +105,7 @@
                                                     <input type="email" name="email" value="" placeholder="Email *" required>
                                                 </div>
                                                 <div class="form-group">
-                                                    <textarea name="message" placeholder="Message *" required></textarea>
+                                                    <textarea name="msg" placeholder="Message *" required></textarea>
                                                 </div>
                                                 <button type="submit" class="theme-btn btn-style-two">Send us</button>
                                             </form>

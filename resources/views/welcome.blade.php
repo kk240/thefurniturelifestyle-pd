@@ -734,12 +734,12 @@
                     <!--form-box-->
                     <div class="form-box default-form wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div class="contact-form default-form">
-                            <form method="post" action="{{route('contact.send')}}">
+                            <form method="post" action="{{route('contact.send')}}" id="contact-form">
                                 @csrf
                                 <div class="row clearfix">
                                 
                                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                                        <select>
+                                        <select name="subject">
                                             <option>Wooden Flooring</option>
                                             <option>Metal Flooring</option>
                                             <option>Concrete Flooring</option>
@@ -1038,14 +1038,15 @@
                 <!--Form Column-->
                 <div class="form-column col-lg-8 col-md-12 col-sm-12">
                     <div class="inner-box">
-                        <form method="post" action="#">
+                        <form method="post" action="/sub_submit">
+                            @csrf
                             <div class="row clearfix">
                                 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
                                     <div class="row clearfix">
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="form-group">
                                                 <span class="floated-icon fa fa-user"></span>
-                                                <input type="text" name="email" value="" placeholder="Your Name" required>
+                                                <input type="text" name="name" value="" placeholder="Your Name" required>
                                             </div>
                                         </div>
                                         
@@ -1064,6 +1065,8 @@
                                 
                             </div>
                         </form>
+                       
+
                     </div>
                 </div>
                 

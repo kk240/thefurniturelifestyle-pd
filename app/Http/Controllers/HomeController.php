@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Contactus;
+use App\Mail\ContactUsMail;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
@@ -18,29 +19,46 @@ class HomeController extends Controller
     {
         return view('services');
     }
-    // public function contactUs(Request $request)
-    // {
-    //     $contactus = Contactus::create([
-    //         'name'=>$request->name,
-    //         'email'=>$request->email,
-    //         'message'=>$request->message,
-    //     ]);
+    //footer contact us form
+    public function contactUs(Request $request)
+    {
 
-    //     return Redirect('/');
-    // }
+        Mail::send('email.footermail', [
+            'name' => $request->name,
+            'email' => $request->email,
+            'msg' => $request->msg,
+        ], function ($mail) use ($request) {
+            $mail->from(env('MAIL_FROM_ADDRESS', $request->name));
+            $mail->to('kundan@thefurniturelifestyle.com')->subject('Message from footer form');
+        });
+
+
+        $name =  $request->name;
+        $email =  $request->email;
+        $message =  $request->msg;
+
+        $s = new Contactus;
+        $s->name = $name;
+        $s->email = $email;
+        $s->message = $message;
+        $s->save();
+        return back()->with('sent', 'your message has been sent successfully!')->withFragment('form-section');
+    }
+    //welcome page and contact page quotaion form
     public function  sendEmail(Request $request)
     {
 
 
         Mail::send('email.contactmail', [
+            'subject' => $request->subject,
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
-            //'message' => $request->message,
+            'msg' => $request->msg,
         ], function ($mail) use ($request) {
             $mail->from(env('MAIL_FROM_ADDRESS', $request->name));
             $mail->to('kundan@thefurniturelifestyle.com')->subject('contact us message');
         });
-        return back()->with('message_sent', 'your message has been sent successfully!');
+        return back()->with('message_sent', 'your message has been sent successfully!')->withFragment('contact-form');
     }
 }

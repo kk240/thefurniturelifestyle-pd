@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Auth::routes();
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -38,6 +38,8 @@ Route::post('/contact-us',  'HomeController@contactUs')->name('contact-us');
 
 Route::post('/send-message', 'HomeController@sendEmail')->name('contact.send');
 
+Route::post('/sub_submit', 'SubscribersController@store');
+
 Route::get('/about-us',  function () {
     return view('aboutus');
 })->name('about-us');
@@ -45,3 +47,19 @@ Route::get('/about-us',  function () {
 Route::get('/our-team',  function () {
     return view('our-team');
 })->name('our-team');
+
+
+//Admin/////////////////////////////////////////////
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {
+    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+});
+
+//User////////////////////////
+Route::group(['prefix' => 'user', 'as' => 'user.', 'namespace' => 'User', 'middleware' => ['auth', 'user']], function () {
+    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+});
+
+// Route::get('/login', 'Authcontroller@index')->name('login');
+// Route::get('/register', 'Authcontroller@register_show')->name('register');
+// Route::post('/login', 'Authcontroller@login')->name('do_login');
+// //register

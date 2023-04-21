@@ -4,6 +4,7 @@
 
 
 <head>
+<meta name="google-site-verification" content="cEBml8sBBfs_f8lqkkvrH2yMZnfCIrPRJrOLnkaBAhI" />
 <meta charset="utf-8">
 <title>The furniture lifestyle - Interior Design and furniture in Pune | Homepage | Best and Affordable Furniture services in Pune </title>
 <!-- Stylesheets -->

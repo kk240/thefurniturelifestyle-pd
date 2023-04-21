@@ -35,7 +35,7 @@
                     </div>
                     @endif
                 	<!--form-box-->
-                    <div class="form-box default-form">
+                    <div class="form-box default-form" >
                         <div class="contact-form default-form">
                             <form method="post" action="{{route('contact.send')}}" id="contact-form">
                                 @csrf
@@ -63,7 +63,7 @@
                                     </div>
                                     
                                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                        <textarea name="message" placeholder="Message *"></textarea>
+                                        <textarea name="msg" placeholder="Message *"></textarea>
                                     </div>
                                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                         <button type="submit" class="theme-btn btn-style-two">Get Quote</button>
@@ -80,9 +80,9 @@
                     <div class="desc-text">There are many variations off +1800 854 5864 available, but the majority have ut suffered alterattions in some forms by injected humour looks events slightly seds believable ut  seds do eiusmod tempor incididunt labore.</div>
                 	<div class="info-style-one">
                         <ul>
-                            <li><div class="icon-box"><span class="flaticon-international-delivery"></span></div><h4>Address :</h4><div class="text">21/17, Level 4 Steel Rock St, Melbourne <br>Victoria 3000, Australia.</div></li>
-                            <li><div class="icon-box"><span class="flaticon-envelope"></span></div><h4>Mail to Fernando :</h4><div class="text">thefurniturelifestyle@gmail.com</div></li>
-                            <li><div class="icon-box"><span class="flaticon-phone-call"></span></div><h4>Call Him:</h4><div class="text"> +91 7875303545</div></li>
+                            <li><div class="icon-box"><span class="flaticon-international-delivery"></span></div><h4>Address :</h4><div class="text">Dangat Estate, Warje, Pune <br>Pune 411058, Maharashtra.</div></li>
+                            <li><div class="icon-box"><span class="flaticon-envelope"></span></div><h4>Mail to us:</h4><div class="text">thefurniturelifestyle@gmail.com</div></li>
+                            <li><div class="icon-box"><span class="flaticon-phone-call"></span></div><h4>Call us:</h4><div class="text"> +91 7875303545</div></li>
                         </ul>
                     </div>
                 </div>

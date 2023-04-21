@@ -19,7 +19,6 @@
             <div class="pull-right">
                 <ul class="bread-crumb clearfix">
                     <li><a href="index-2.html">Home</a></li>
-                    <li><a href="shop.html">Shop</a></li>
                     <li>Register</li>
                 </ul>
             </div>
@@ -41,28 +40,93 @@
                     
                     <!--Login Form-->
                     <div class="styled-form register-form">
-                        <form method="post" action="#">
+                        {{-- <form method="POST" action="{{route('register')}}">
+                            @csrf
                             <div class="form-group">
                                 <span class="adon-icon"><span class="fa fa-user"></span></span>
-                                <input type="text" name="username" value="" placeholder="Your Name *">
+                                <input type="text" name="name" value="" placeholder="Your Name *">
                             </div>
                             <div class="form-group">
                                 <span class="adon-icon"><span class="fa fa-envelope-o"></span></span>
-                                <input type="email" name="useremil" value="" placeholder="Enter Mail id *">
+                                <input type="email" name="email" value="" placeholder="Enter Mail id *">
                             </div>
                             <div class="form-group">
                                 <span class="adon-icon"><span class="fa fa-unlock-alt"></span></span>
-                                <input type="password" name="userpassword" value="" placeholder="Enter Password">
+                                <input type="password" name="password" value="" placeholder="Enter Password">
                             </div>
                             <div class="clearfix">
                                 <div class="form-group pull-left">
-                                    <button type="button" class="theme-btn btn-style-two">Register</button>
+                                    <button type="submit" class="theme-btn btn-style-two">Register</button>
                                 </div>
                                 <div class="form-group padd-top-10 pull-right">
                                     * You must be a free registered user to submit content. 
                                 </div>
                             </div>
                             
+                        </form> --}}
+                        <form method="post" action="{{ route('register') }}">
+                            @csrf
+    
+                            <div class="form-group row">
+                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+    
+                                <div class="col-md-6">
+                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+    
+                                    @error('name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+    
+            
+    
+    
+                            <div class="form-group row">
+                                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+    
+                                <div class="col-md-6">
+                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+    
+                                    @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+    
+                            <div class="form-group row">
+                                <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+    
+                                <div class="col-md-6">
+                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+    
+                                    @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+    
+                            <div class="form-group row">
+                                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+    
+                                <div class="col-md-6">
+                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                </div>
+                            </div>
+    
+                            <div class="form-group row mb-0">
+                                <div class="col-md-6 offset-md-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        {{ __('Register') }}
+                                    </button>
+                                </div>
+                            </div>
                         </form>
                     </div>
                     

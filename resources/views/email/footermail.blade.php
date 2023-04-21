@@ -7,12 +7,9 @@
     <title>the furniture lifestyle</title>
 </head>
 <body>
-    <h1>Contact form message</h1>
-    <p>subject : {{$subject}}</p>
+    <h1>Message from footer :- </h1>
     <p>name : {{$name}}</p>
     <p>email : {{$email}}</p>
-    <p>phone : {{$phone}}</p>
     <p>message : {{$msg}}</p>
-  
 </body>
 </html>
