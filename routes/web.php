@@ -30,6 +30,10 @@ Route::get('/project',  function () {
     return view('portfolio');
 })->name('project');
 
+Route::get('/blogs', 'BlogController@index')->name('blogs');
+Route::get('/blogs/{id}', 'BlogController@display')->name('blog.display');
+Route::post('/add-blog', 'BlogController@addBlog')->name('addBlog');
+
 Route::get('/contact-us',  function () {
     return view('contact');
 })->name('contact');
@@ -38,7 +42,7 @@ Route::post('/contact-us',  'HomeController@contactUs')->name('contact-us');
 
 Route::post('/send-message', 'HomeController@sendEmail')->name('contact.send');
 
-Route::post('/sub_submit', 'SubscribersController@store');
+Route::post('/sub_submit', 'SubscribersController@store')->name('submit');
 
 Route::get('/about-us',  function () {
     return view('aboutus');

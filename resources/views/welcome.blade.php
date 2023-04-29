@@ -1038,7 +1038,7 @@
                 <!--Form Column-->
                 <div class="form-column col-lg-8 col-md-12 col-sm-12">
                     <div class="inner-box">
-                        <form method="post" action="/sub_submit">
+                        <form method="post" action="" >
                             @csrf
                             <div class="row clearfix">
                                 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
@@ -1060,7 +1060,7 @@
                                 </div>
                                 
                                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                    <button type="submit" class="theme-btn">Subscribe</button>
+                                    <button type="submit" class="theme-btn btn-submit">Subscribe</button>
                                 </div>
                                 
                             </div>
@@ -1073,5 +1073,26 @@
             </div>
         </div>
     </section>
-    
+    <script type="text/javascript">
+    $ajaxSetup(
+        {
+            headers:{
+                'X-CSRF_TOKEN': $('meta[name="csrf-token"]').attr('content');
+            }
+        });
+    $(".btn-submit").click( function(e){
+        e.preventDefault();
+        var email = $("input[name=email]").val();
+
+        $.ajax({
+            type:'post',
+            url:"{{ route('submit')}}",
+            data:{email:email, 
+            success: function(data){
+                alert(data.success);
+            }}
+        })
+     }
+    )
+    </script>
 @endsection

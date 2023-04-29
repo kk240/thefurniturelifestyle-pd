@@ -87,7 +87,7 @@
                                     </li>
                                     <li><a href="{{route('project')}}">Projects</a>
                                     </li>
-                                    <li><a href="#">Blog</a>
+                                    <li><a href="{{route('blogs')}}">Blog</a>
                                     	<!-- <ul>
                                             <li><a href="blog.html">Blog Standard</a></li>
                                             <li><a href="blog-large-image.html">Blog Large Image</a></li>
@@ -109,9 +109,9 @@
                                     
                                     @auth
                                     @if( Auth::user()->role->id == 1)
-                                    <a href="{{ route('admin.dashboard') }}">Dashboard</a>
+                                    <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
                                     @elseif(Auth::user()->role->id == 2)
-                                    <a href="{{ route('user.dashboard') }}">Dashboard</a>
+                                    <li><a href="{{ route('user.dashboard') }}">Dashboard</a></li>
                                     @else {{null}};
                                     @endif 
                                     @endauth
@@ -148,7 +148,7 @@
                                
                                              @endguest    
 
-                                 </ul>
+                                </ul>
                             </div>
                         </nav><!-- Main Menu End-->
                         
