@@ -72,7 +72,7 @@
                             <div class="navbar-collapse collapse clearfix">
                                 <ul class="navigation clearfix">
                                     <li class="current"><a href="{{route('home')}}">Home</a></li>
-                                    <li class=""><a href="{{route('about-us')}}">About Us</a>
+                                    <li class=""><a href="{{route('about-us')}}">About</a>
                                     	<!-- <ul>
                                             <li><a href="{{route('about-us')}}">About Us</a></li>
                                             <li><a href="{{route('our-team')}}">Our Team</a></li>
